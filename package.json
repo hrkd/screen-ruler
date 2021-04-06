@@ -1,6 +1,6 @@
 {
-  "name": "spa-starter",
-  "version": "0.1.0",
+  "name": "screen-ruler",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.0",
@@ -45,9 +45,9 @@
   },
   "scripts": {
     "start": "HTTPS=true env-cmd -f .env.development react-scripts start",
-    "build": "rm -fr build && REACT_APP_COMMIT_HASH=$(git rev-parse HEAD) env-cmd -f .env.development react-scripts build",
-    "build:stg": "rm -fr build && REACT_APP_COMMIT_HASH=$(git rev-parse HEAD) env-cmd -f .env.staging react-scripts build",
-    "build:prod": "rm -fr build && REACT_APP_COMMIT_HASH=$(git rev-parse HEAD) env-cmd -f .env.production react-scripts build",
+    "build": "rm -fr doc && REACT_APP_COMMIT_HASH=$(git rev-parse HEAD) env-cmd -f .env.development react-scripts build && mv build doc",
+    "build:stg": "rm -fr doc && REACT_APP_COMMIT_HASH=$(git rev-parse HEAD) env-cmd -f .env.staging react-scripts build && mv build doc",
+    "build:prod": "rm -fr doc && REACT_APP_COMMIT_HASH=$(git rev-parse HEAD) env-cmd -f .env.production react-scripts build && mv build doc",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
